@@ -115,7 +115,7 @@ namespace dotNetWebApp.Controllers
             mail.Attachments.Add(new Attachment(Exporter.exportToPdf(employeeVM), "Employee Report.pdf", "application/pdf"));
 
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-            smtpClient.Credentials = new System.Net.NetworkCredential("hfghfgtestVladimirMaksimovic@gmail.com", "jjxgibosghncrzti");
+            smtpClient.Credentials = new System.Net.NetworkCredential("testVladimirMaksimovic@gmail.com", "jjxgibosghncrzti");
             smtpClient.EnableSsl = true;
 
             smtpClient.Send(mail);
