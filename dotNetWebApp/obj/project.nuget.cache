@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Eg6BPOxYLi3BwMoVNdQxeeU3PN/K/9bF+svSfPs9BnOmqAeiwCxuyY2xmSHV0nmcfWVSuCMVsi9I3YaC18AMqg==",
+  "dgSpecHash": "yThn2jzNfi8wIoco1PkqnpkPPVjXrdOi+i9oqz/sMMp8beZvN1VovelQa1OmAcwwZoy9aT3Pr1f3VL76DCP1GQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vlada\\source\\repos\\dotNetWebApp\\dotNetWebApp\\dotNetWebApp.csproj",
+  "projectFilePath": "C:\\Users\\vlada\\source\\repos\\EmployeeSalaryReport\\dotNetWebApp\\dotNetWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vlada\\.nuget\\packages\\aspose.words\\23.1.0\\aspose.words.23.1.0.nupkg.sha512",
     "C:\\Users\\vlada\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",

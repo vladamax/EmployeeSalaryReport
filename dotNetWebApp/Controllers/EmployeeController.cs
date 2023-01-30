@@ -89,21 +89,6 @@ namespace dotNetWebApp.Controllers
             }
         }
 
-        public IActionResult PDF(int id, string currency)
-        {
-            try
-            {
-            Employee? employee = _db.Employees.Find(id);
-            EmployeeVM? _currentEmployee = TaxCalculator.BrutoSalaryCalculation(employee, currency);
-            return File(Exporter.exportToPdf(_currentEmployee), "application/pdf", "DownloadName.pdf");
-            }
-            catch (Exception ex)
-            {
-                TempData["Message"] = ex.ToString();
-                return View("Index");
-            }
-        }
-
         public IActionResult Email(int id, string currency)
         {
             try
@@ -111,13 +96,13 @@ namespace dotNetWebApp.Controllers
                 Employee employee = _db.Employees.Find(id);
                 EmployeeVM _currentEmployee = TaxCalculator.BrutoSalaryCalculation(employee, currency);
                 Exporter.EmailEmployeeReport(_currentEmployee);
-                TempData["Message"] = "Sent";
+                TempData["Message"] = "Report successfully sent to the employee email";
                 return View("Show", _currentEmployee);
             }
             catch (Exception ex)
             {
-                TempData["Message"] = ex.ToString();
-                return View("Index");
+                TempData["Message"] = "Failed to send the email";
+                return RedirectToAction("Index");
             }
         }
     }

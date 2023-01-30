@@ -11142,11 +11142,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vlada\\source\\repos\\dotNetWebApp\\dotNetWebApp\\dotNetWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\vlada\\source\\repos\\EmployeeSalaryReport\\dotNetWebApp\\dotNetWebApp.csproj",
       "projectName": "dotNetWebApp",
-      "projectPath": "C:\\Users\\vlada\\source\\repos\\dotNetWebApp\\dotNetWebApp\\dotNetWebApp.csproj",
+      "projectPath": "C:\\Users\\vlada\\source\\repos\\EmployeeSalaryReport\\dotNetWebApp\\dotNetWebApp.csproj",
       "packagesPath": "C:\\Users\\vlada\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vlada\\source\\repos\\dotNetWebApp\\dotNetWebApp\\obj\\",
+      "outputPath": "C:\\Users\\vlada\\source\\repos\\EmployeeSalaryReport\\dotNetWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vlada\\AppData\\Roaming\\NuGet\\NuGet.Config",

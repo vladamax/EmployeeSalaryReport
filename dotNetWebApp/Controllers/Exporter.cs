@@ -3,7 +3,6 @@ using dotNetWebApp.Models;
 using dotNetWebApp.ViewModels;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using Microsoft.AspNetCore.Mvc;
 using System.Net.Mail;
 using System.Text;
 
@@ -109,14 +108,14 @@ namespace dotNetWebApp.Controllers
         public static void EmailEmployeeReport(EmployeeVM employeeVM)
         {
             MailMessage mail = new MailMessage();
-            mail.From = new MailAddress("vladamaks@gmail.com");
+            mail.From = new MailAddress("testVladimirMaksimovic@gmail.com","Vladimir Maksimovic");
             mail.To.Add(new MailAddress(employeeVM.employee.Email));
             mail.Subject = "Employee Report";
             mail.IsBodyHtml = true;
             mail.Attachments.Add(new Attachment(Exporter.exportToPdf(employeeVM), "Employee Report.pdf", "application/pdf"));
 
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-            smtpClient.Credentials = new System.Net.NetworkCredential("vladamaks@gmail.com", "hssyneymiiwidhfs");
+            smtpClient.Credentials = new System.Net.NetworkCredential("testVladimirMaksimovic@gmail.com", "jjxgibosghncrzti");
             smtpClient.EnableSsl = true;
 
             smtpClient.Send(mail);

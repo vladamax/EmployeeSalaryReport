@@ -49,8 +49,8 @@
     <tbody>
         @foreach(var obj in Model)
         {
-            <tr style="border:double;text-align:center;"   >
-                <td style="">
+                <tr style="border:double;text-align:center;">
+                <td>
                     @obj.FirstName HOVERRRRRRRRRRR
                 </td>
                 <td>
@@ -73,13 +73,11 @@
 </table>
 </div>
 
-
-@if (TempData["Message"] != null)
-    @section Scripts{
-                <script>
-                    $(function() {
-
-            Swal.fire(TempData["Message"])
-                    })
-                </script>
+    @if (TempData["Message"]!= null)
+        @section Scripts{
+            <script>
+                $(function() {
+            Swal.fire("@TempData["Message"]");
+                })
+            </script>
         }
