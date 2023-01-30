@@ -99,7 +99,7 @@ namespace dotNetWebApp.Controllers
                 TempData["Message"] = "Report successfully sent to the employee email";
                 return View("Show", _currentEmployee);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 TempData["Message"] = "Failed to send the email";
                 return RedirectToAction("Index");
