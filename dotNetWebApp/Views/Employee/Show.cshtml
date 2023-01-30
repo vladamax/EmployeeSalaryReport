@@ -1,0 +1,84 @@
+﻿@using dotNetWebApp.ViewModels;
+@{
+    @model EmployeeVM
+}
+<h3>
+    First Name:         @Model.employee.FirstName
+</h3>
+<h3>
+    Last Name:          @Model.employee.LastName
+</h3>
+<h3>
+    Position:           @Model.employee.Position
+</h3>
+<h3>
+    Netto Salary:      @Model.employee.NettoSalary
+</h3>
+<h3>
+    Address:            @Model.employee.Address
+</h3>
+<h3>
+    Address:            @Model.employee.Email
+</h3>
+
+<a asp-controller="Employee" asp-action="Index" class="btn btn-secondary" style="width:150px">
+    Back To List
+</a>
+
+<a asp-controller="Employee" asp-route-mailTo="vladamaks@gmail.com"
+   asp-route-id=@Model.employee.Id
+   asp-route-currency="RSD"
+   asp-action="Email" class="btn btn-info m-2">
+    Email
+</a>
+
+@switch (Model.TaxCalculation[0])
+{
+    case "EUR":
+        <a asp-controller="Employee" asp-action="Show" asp-route-id=@Model.employee.Id asp-route-currency="USD" class="btn btn-info m-2">
+            Convert to USD
+        </a>
+        <a asp-controller="Employee" asp-action="Show" asp-route-id=@Model.employee.Id asp-route-currency="RSD" class="btn btn-info m-2">
+            Convert to RSD
+        </a>
+        break;
+    case "USD":
+        <a asp-controller="Employee" asp-action="Show" asp-route-id=@Model.employee.Id asp-route-currency="EUR" class="btn btn-info m-2">
+            Convert to EUR
+        </a>
+        <a asp-controller="Employee" asp-action="Show" asp-route-id=@Model.employee.Id asp-route-currency="RSD" class="btn btn-info m-2">
+            Convert to RSD
+        </a>
+        break;
+    default:
+        <a asp-controller="Employee" asp-action="Show" asp-route-id=@Model.employee.Id asp-route-currency="EUR" class="btn btn-info m-2">
+            Convert to EUR
+        </a>
+
+        <a asp-controller="Employee" asp-action="Show" asp-route-id=@Model.employee.Id asp-route-currency="USD" class="btn btn-info m-2">
+            Convert to USD
+        </a>
+        break;
+}
+
+
+<li>
+    Currency: @Model.TaxCalculation[0]
+</li>
+
+@foreach (var calculation in Model.TaxCalculation.Skip(1))
+{
+    <li>
+        @calculation
+    </li>
+}
+
+@if(TempData["Message"] != null)
+        @section Scripts{
+            <script>
+                $(function() {
+
+            Swal.fire('Report successfully sent to the employee email')
+                })
+            </script>
+        }
